@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import LoginPage from './LoginPage';
+import RegisterPage from './RegisterPage';
 
-export default function App() {
+const App = () => {
+  const [showRegister, setShowRegister] = useState(false);
+
+  const onRegisterLinkClick = () => {
+    setShowRegister(true);
+  };
+
+  const onLoginLinkClick = () => {
+    setShowRegister(false);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1 }}>
+      {showRegister ? (
+        <RegisterPage onLoginLinkClick={onLoginLinkClick} />
+      ) : (
+        <LoginPage onRegisterLinkClick={onRegisterLinkClick} />
+      )}
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

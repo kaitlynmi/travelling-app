@@ -41,6 +41,7 @@ const RegisterPage = ({ onLoginLinkClick }) => {
             <View style={styles.contextGroup}>
                 <Text style={styles.title}>Sign up!</Text>
             </View>
+            
             <View style={styles.inputGroup}>
                 <View style={styles.inputSubgroup}>
                     <Text style={[styles.text, styles.label]}>Username:</Text>
@@ -69,7 +70,6 @@ const RegisterPage = ({ onLoginLinkClick }) => {
                         {/* Uncomment below line after importing Icon and add your logic */}
                         {/* <Icon name={usernameValid ? 'check' : 'times'} size={20} color={usernameValid ? 'green' : 'red'} /> */}
                     </View>
-                    {/* Repeat the same structure for password input field */}
 
                 </View>
             </View>
