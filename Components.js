@@ -1,107 +1,92 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import {
-    useFonts,
-    PlusJakartaSans_400Regular,
-    PlusJakartaSans_500Medium,
-    PlusJakartaSans_600SemiBold,
-    PlusJakartaSans_700Bold,
-} from '@expo-google-fonts/plus-jakarta-sans';
+import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 
-const Title = ({ text }) => {
-    return <Text style={styles.title}>{text}</Text>;
-};
+export const Title = ({ text }) => (
+  <View style={styles.titleContainer}>
+    <Text style={styles.titleText}>{text}</Text>
+  </View>
+);
 
-const Subtitle = ({ text }) => {
-    return <Text style={styles.subtitle}>{text}</Text>;
-};
+export const Subtitle = ({ text }) => (
+  <View style={styles.subtitleContainer}>
+    <Text style={styles.subtitleText}>{text}</Text>
+  </View>
+);
 
-const InputSubGroup = ({ label, children }) => {
-    return (
-        <View style={styles.inputSubgroup}>
-            <Text style={[styles.text, styles.label]}>{label}</Text>
-            {children}
-        </View>
-    );
-};
+export const InputSubgroup = ({ label, value, onChangeText }) => (
+  <View style={styles.inputSubgroup}>
+    <Text style={styles.label}>{label}</Text>
+    <View style={styles.inputContainer}>
+      <TextInput
+        style={styles.inputBox}
+        value={value}
+        onChangeText={onChangeText}
+      />
+    </View>
+  </View>
+);
 
-const InputField = ({ }) => {
-    return (
-        <TextInput style={styles.inputBox} />
-    );
-};
+export const ActionButton = ({ text, onPress }) => (
+  <TouchableOpacity style={styles.button} onPress={onPress}>
+    <Text style={styles.buttonText}>{text}</Text>
+  </TouchableOpacity>
+);
 
-const ActionButton = ({ title, onPress }) => {
-    return (
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-            <Text style={styles.buttonText}>{title}</Text>
-        </TouchableOpacity>
-    );
-};
-
-const ActionLink = ({ children, onPress }) => {
-    return (
-        <TouchableOpacity style={styles.loginLink} onPress={onPress}>
-            <Text style={styles.linkText}>{children}</Text>
-        </TouchableOpacity>
-    );
-};
-
-const MinimalComponents = {
-    Title,
-    Subtitle,
-    InputSubGroup,
-    InputField, 
-    ActionButton,
-    ActionLink,
-};
-
-export default MinimalComponents;
+export const ActionLink = ({ text, onPress }) => (
+  <TouchableOpacity style={styles.loginLink} onPress={onPress}>
+    <Text style={styles.linkText}>{text}</Text>
+  </TouchableOpacity>
+);
 
 const styles = StyleSheet.create({
-    title: {
-        fontSize: 32,
-        fontFamily: 'PlusJakartaSans_600SemiBold',
-    },
-    subtitle: {
-        fontSize: 24,
-        fontFamily: 'PlusJakartaSans_500Medium',
-    },
-    inputSubgroup: {
-        marginBottom: 16,
-    },
-    label: {
-        fontSize: 16,
-        marginBottom: 4,
-        fontFamily: 'PlusJakartaSans_400Regular',
-    },
-    inputBox: {
-        // marginTop: 4,
-        fontSize: 16,
-        fontFamily: 'PlusJakartaSans_500Medium',
-        borderRadius: 8,
-        borderWidth: 1,
-        padding: 8,
-    },
-    button: {
-        width: '100%',
-        backgroundColor: '#2196F3',
-        borderRadius: 8,
-        marginBottom: 8,
-        padding: 12,
-        alignItems: 'center',
-    },
-    buttonText: {
-        fontSize: 16,
-        fontFamily: 'PlusJakartaSans_700Bold',
-        color: 'white',
-    },
-    loginLink: {
-        marginBottom: 8,
-    },
-    linkText: {
-        fontSize: 16,
-        fontFamily: 'PlusJakartaSans_400Regular',
-        color: '#2196F3',
-    },
+  titleContainer: {
+    width: '90%',
+    marginBottom: 24,
+  },
+  titleText: {
+    fontSize: 32,
+    fontWeight: 'bold',
+  },
+  subtitleContainer: {
+    width: '90%',
+    marginBottom: 24,
+  },
+  subtitleText: {
+    fontSize: 24,
+    fontWeight: '500',
+  },
+  inputSubgroup: {
+    marginBottom: 16,
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 4,
+  },
+  inputContainer: {
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 8,
+  },
+  inputBox: {
+    fontSize: 16,
+  },
+  button: {
+    width: '100%',
+    backgroundColor: '#2196F3',
+    borderRadius: 8,
+    marginBottom: 8,
+    padding: 12,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 16,
+    color: 'white',
+  },
+  loginLink: {
+    marginBottom: 8,
+  },
+  linkText: {
+    fontSize: 16,
+    color: '#2196F3',
+  },
 });
