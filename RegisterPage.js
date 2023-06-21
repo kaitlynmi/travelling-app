@@ -101,70 +101,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    text: {
-        fontFamily: 'PlusJakartaSans_400Regular',
-    },
     contextGroup: {
         width: '90%',
         marginBottom: 24,
         // height: 70,
     },
-    title: {
-        fontSize: 32,
-        fontFamily: 'PlusJakartaSans_600SemiBold',
-    },
-    subtitle: {
-        fontSize: 24,
-        fontFamily: 'PlusJakartaSans_500Medium',
-    },
     inputGroup: {
         width: '90%',
         marginBottom: 24,
-    },
-    inputSubgroup: {
-        marginBottom: 16,
-    },
-    label: {
-        fontSize: 16,
-        marginBottom: 4, // added spacing between label and input box
-        fontFamily: 'PlusJakartaSans_400Regular',
-    },
-    inputContainer: {
-
-    },
-    inputBox: {
-        // marginTop: 4,
-        fontSize: 16,
-        fontFamily: 'PlusJakartaSans_500Medium',
-        borderRadius: 8,
-        borderWidth: 1,
-        padding: 8,
     },
     actionGroup: {
         width: '90%',
         marginBottom: 16,
         alignItems: 'flex-end',
-    },
-    button: {
-        width: '100%',
-        backgroundColor: '#2196F3',
-        borderRadius: 8,
-        marginBottom: 8,
-        padding: 12,
-        alignItems: 'center',
-    },
-    buttonText: {
-        fontSize: 16,
-        fontFamily: 'PlusJakartaSans_700Bold',
-        color: 'white',
-    },
-    loginLink: {
-        marginBottom: 8,
-    },
-    linkText: {
-        fontSize: 16,
-        fontFamily: 'PlusJakartaSans_400Regular',
-        color: '#2196F3', // added color to make the link look more like a link
     },
 });
 
